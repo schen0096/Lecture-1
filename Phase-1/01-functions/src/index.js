@@ -1,4 +1,5 @@
 //What are variables and how do you define them?
+<<<<<<< HEAD
 //Containers that can hold all sorts of data types and values. 
 //You can define variables using const or let.
 const host ='Rose';
@@ -59,8 +60,80 @@ const payGuest = (pay) => {
 }
 // you can make it even cleaner by removing parentheses if one parameter (TWO DOES NOT WORK)
 //const payGuest = pay => `${pay} paid to guest`
+=======
+//Containers that store values 
+//Global Scope
+const host = 'Rose'
+let episode = 'Intro to JavaScript'
+
+//How do you define functions?
+// function podCastIntro(){
+//     return `Welcome to episode one, how to use functions`
+// }
+//console.log(podCastIntro())
+//console.log(`Welcome to episode one, how to use functions`)
+
+const episodeIntro = function(day, episode){
+    //Functional scope
+    return `Welcome to episode ${day}, ${episode}`
+}
+
+const hostIntro = function(host){
+    console.log('hello from host intro')
+    return `Hello, I'm ${host}. Thank you for tuning into the Flatiron podcast`
+}
+
+//Functions as arguments
+function playFullIntro(part1, part2, day, episode, host){
+    console.log('hello from play Full intro')
+    return `${part1(day, episode)}. ${part2(host)}`
+
+}
+// playFullIntro(episodeIntro, hostIntro, 'one', 'how to use functions', 'Rose')
+
+//arrow functions 
+// const welcomeGuestIntro = function(){
+//     return 'Lets welcome our guest!'
+// }
+//Single line returns
+const welcomeGuestIntro = () => 'Lets welcome our guest!'
+
+const guestIntro = (name, info) => `Hello I'm ${name} and I'm a ${info}`
+
+const payGuest = pay => `${pay} paid to guest`
+>>>>>>> 97ca38914326ae035e60e6cfc884ba064e108f84
 
 //The call stack
+function playEpisode(epIntro, hIntro, day, episode, host, guest, info, pay){
+
+    playFullIntro(epIntro,hIntro, day, episode, host)
+    console.log('done')
+    welcomeGuestIntro()
+    guestIntro(guest,info)
+    payGuest(pay)
+ 
+}
+
+
+playEpisode(episodeIntro, hostIntro, 'one', 'how functions work', 'rose')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //this allows us to call and invoke code
 //first thing that goes in is the last thing that comes out
@@ -93,6 +166,7 @@ playEpisode(episodeIntro, hostIntro, 'one', 'intro', 'rose', welcomeGuestIntro, 
 //block scope
 
 
+<<<<<<< HEAD
 
 
 //Write a function that takes 2 parameters.  Return the two parameters multiplied by each other.
@@ -120,3 +194,6 @@ function doMath(someMath, num1, num2){
     return someMath(num1, num2);
 }
 doMath(multiply, 5, 10);
+=======
+    
+>>>>>>> 97ca38914326ae035e60e6cfc884ba064e108f84
