@@ -63,7 +63,9 @@ function reOrder(collection){
 }
 reOrder(bookStore.inventory)
 console.log(bookStore.inventory);
+
 // OR 
+
 bookStore.inventory.forEach(element => {
     if (element.inventory === 0){
         element.reorder = true
@@ -73,7 +75,8 @@ console.log(bookStore.inventory)
 
 // OR
 
-bookStore.inventory.filter(book => book.inventory === 0)
+let filterArr = bookStore.inventory.filter(book => book.inventory === 0).map(book => { book.reorder = true return book})
+console.log(filterArr)
 // this returns only the books with inventory 0 and you can change it after pulling
 
 // 6. Loop through the bookStore inventory and console.log the title of every book
