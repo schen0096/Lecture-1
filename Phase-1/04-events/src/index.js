@@ -30,8 +30,8 @@ function renderCard(book){
   let pPrice = document.createElement('p')
   let pInventory = document.createElement('p')
   let btn = document.createElement('button')
-  let reviews = document.createElement('details')
-  // let reviews = document.createElement('ul')
+  // let reviews = document.createElement('details')
+  let reviews = document.createElement('ul')
   let form = document.createElement('form')
   let reviewText = document.createElement('input')
   reviewText.name = "review"
@@ -67,7 +67,7 @@ function renderCard(book){
   btn.textContent = 'Add Inventory'
 
   btn.addEventListener('click', () => {
-    console.log('hi')
+    // console.log('hi')
     book.inventory+=1
     pInventory.textContent = `Inventory: ${book.inventory}`
   })
@@ -77,14 +77,14 @@ function renderCard(book){
   //Bonus
   //Add a form to the card that will render a new review to the card. 
   book.reviews.forEach( review =>  {
-    const summary = document.createElement('summary')
-    const p = document.createElement('p')
-    summary.textContent = 'Reviews'
-    p.textContent = review.content
-    reviews.append(summary, p)
-    // const li = document.createElement('li')
-    // li.textContent = review.content
-    // reviews.append(li)
+    // const summary = document.createElement('summary')
+    // const p = document.createElement('p')
+    // summary.textContent = 'Reviews'
+    // p.textContent = review.content
+    // reviews.append(summary, p)
+    const li = document.createElement('li')
+    li.textContent = review.content
+    reviews.append(li)
   })
   // new element for the review
   // add in the content
